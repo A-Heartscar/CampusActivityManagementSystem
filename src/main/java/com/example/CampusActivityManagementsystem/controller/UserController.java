@@ -12,11 +12,14 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    // 根据id查用户
     @GetMapping("/user/{id}")
     public Response<User> getUserById(@PathVariable int id) {
         return Response.newSuccess(userService.getUserById(id));
     }
 
+    // 创建新用户
     @PostMapping("/user/newUser")
     public Response<User> createUser(@RequestBody User user) {
         try {
@@ -29,7 +32,7 @@ public class UserController {
         }
     }
 
-    // 新增更新用户接口
+    // 更新用户
     @PutMapping("/user/update/{id}")
     public Response<User> updateUser(
             @PathVariable int id,
@@ -43,7 +46,7 @@ public class UserController {
         }
     }
 
-    // 新增删除用户接口
+    // 删除用户
     @DeleteMapping("/user/delete/{id}")
     public Response<Void> deleteUser(@PathVariable int id) {
         try {
