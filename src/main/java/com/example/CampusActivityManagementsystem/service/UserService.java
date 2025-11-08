@@ -1,6 +1,6 @@
 package com.example.CampusActivityManagementsystem.service;
 
-import com.example.CampusActivityManagementsystem.dao.User;
+import com.example.CampusActivityManagementsystem.entity.User;
 
 public interface UserService {
     User getUserById(int id);

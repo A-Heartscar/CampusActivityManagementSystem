@@ -1,10 +1,10 @@
-package com.example.CampusActivityManagementsystem.service;
+package com.example.CampusActivityManagementsystem.service.impl;
 
-import com.example.CampusActivityManagementsystem.dao.ActivityRegistration;
+import com.example.CampusActivityManagementsystem.entity.ActivityRegistration;
 import com.example.CampusActivityManagementsystem.dao.ActivityRegistrationRepository;
 import com.example.CampusActivityManagementsystem.dao.ActivityRepository;
+import com.example.CampusActivityManagementsystem.service.ActivityRegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.expression.ParseException;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
 package com.example.CampusActivityManagementsystem.controller;
 
-import com.example.CampusActivityManagementsystem.dao.Activity;
+import com.example.CampusActivityManagementsystem.entity.Activity;
 import com.example.CampusActivityManagementsystem.service.ActivityService;
 import com.example.CampusActivityManagementsystem.service.Response;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,7 +41,7 @@ public class ActivityController {
     }
 
     // 修改活动
-    @PutMapping("/activity/update/{id}")
+    @PutMapping("/activity/{id}")
     public Response<Activity> updateActivity(
             @PathVariable Integer id,
             @RequestBody Activity activity
@@ -54,7 +54,7 @@ public class ActivityController {
     }
 
     // 删除活动
-    @DeleteMapping("/activity/delete/{id}")
+    @DeleteMapping("/activity/{id}")
     public Response<Void> deleteActivity(@PathVariable Integer id) {
         try{
             activityService.deleteActivity(id);

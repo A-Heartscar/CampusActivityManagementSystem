@@ -1,10 +1,9 @@
 package com.example.CampusActivityManagementsystem.controller;
 
-import com.example.CampusActivityManagementsystem.dao.User;
+import com.example.CampusActivityManagementsystem.entity.User;
 import com.example.CampusActivityManagementsystem.service.Response;
 import com.example.CampusActivityManagementsystem.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -33,7 +32,7 @@ public class UserController {
     }
 
     // 更新用户
-    @PutMapping("/user/update/{id}")
+    @PutMapping("/user/{id}")
     public Response<User> updateUser(
             @PathVariable int id,
             @RequestBody User user) {
@@ -47,7 +46,7 @@ public class UserController {
     }
 
     // 删除用户
-    @DeleteMapping("/user/delete/{id}")
+    @DeleteMapping("/user/{id}")
     public Response<Void> deleteUser(@PathVariable int id) {
         try {
             userService.deleteUserById(id);

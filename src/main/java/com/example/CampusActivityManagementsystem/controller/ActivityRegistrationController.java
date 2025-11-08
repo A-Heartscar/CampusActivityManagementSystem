@@ -1,6 +1,6 @@
 package com.example.CampusActivityManagementsystem.controller;
 
-import com.example.CampusActivityManagementsystem.dao.ActivityRegistration;
+import com.example.CampusActivityManagementsystem.entity.ActivityRegistration;
 import com.example.CampusActivityManagementsystem.service.ActivityRegistrationService;
 import com.example.CampusActivityManagementsystem.service.Response;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ public class ActivityRegistrationController {
     @Autowired
     private ActivityRegistrationService activityRegistrationService;
 
-    @PostMapping("/activity/register")
+    @PostMapping("/activity_register")
     public Response<ActivityRegistration> register(@RequestBody ActivityRegistration registration) {
         try {
             registration.setId(0);  // 确保ID自增
@@ -24,7 +24,7 @@ public class ActivityRegistrationController {
     }
 
 
-    @GetMapping("/activity/register/{id}")
+    @GetMapping("/activity_register/{id}")
     public Response<ActivityRegistration> getActivityRegistrationById(@PathVariable int id) {
         try{
             return Response.newSuccess(activityRegistrationService.getRegistrationById(id));
@@ -34,7 +34,7 @@ public class ActivityRegistrationController {
     }
 
     // 查询所有报名
-    @GetMapping("/activity/register_getAll")
+    @GetMapping("/activity_register/getAll")
     public Response<List<ActivityRegistration>> getAllActivityRegistration() {
         try {
             return Response.newSuccess(activityRegistrationService.getAllRegistrations());
@@ -44,7 +44,7 @@ public class ActivityRegistrationController {
     }
 
     // 根据活动ID查询报名
-    @GetMapping("/activity/register_activityId/{activityId}")
+    @GetMapping("/activity_register/activityId/{activityId}")
     public Response<List<ActivityRegistration>> getSignUpsByActivity(@PathVariable int activityId) {
         try {
             return Response.newSuccess(activityRegistrationService.getRegistrationsByActivityId(activityId));
@@ -54,7 +54,7 @@ public class ActivityRegistrationController {
     }
 
     // 根据用户ID查询报名
-    @GetMapping("/activity/register_userId/{userId}")
+    @GetMapping("/activity_register/userId/{userId}")
     public Response<List<ActivityRegistration>> getSignUpsByUser(@PathVariable Integer userId) {
         try {
             return Response.newSuccess(activityRegistrationService.getRegistrationsByUserId(userId));
@@ -65,7 +65,7 @@ public class ActivityRegistrationController {
 
 
     // 修改报名
-    @PutMapping("/activity/register_update/{id}")
+    @PutMapping("/activity_register/{id}")
     public Response<ActivityRegistration> updateRegistration(@PathVariable int id, @RequestBody ActivityRegistration registration) {
         try {
             return Response.newSuccess(activityRegistrationService.updateRegistration(id, registration));
@@ -76,7 +76,7 @@ public class ActivityRegistrationController {
     }
 
     // 删除报名
-    @DeleteMapping("/activity/register_delete/{id}")
+    @DeleteMapping("/activity_register/{id}")
     public Response<Void> deleteSignUp(@PathVariable int id) {
         try {
             activityRegistrationService.deleteRegistration(id);

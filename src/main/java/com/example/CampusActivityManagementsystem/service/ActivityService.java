@@ -1,6 +1,6 @@
 package com.example.CampusActivityManagementsystem.service;
 
-import com.example.CampusActivityManagementsystem.dao.Activity;
+import com.example.CampusActivityManagementsystem.entity.Activity;
 
 import java.util.List;
 

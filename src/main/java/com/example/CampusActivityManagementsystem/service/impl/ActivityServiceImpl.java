@@ -1,7 +1,8 @@
-package com.example.CampusActivityManagementsystem.service;
+package com.example.CampusActivityManagementsystem.service.impl;
 
-import com.example.CampusActivityManagementsystem.dao.Activity;
+import com.example.CampusActivityManagementsystem.entity.Activity;
 import com.example.CampusActivityManagementsystem.dao.ActivityRepository;
+import com.example.CampusActivityManagementsystem.service.ActivityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
