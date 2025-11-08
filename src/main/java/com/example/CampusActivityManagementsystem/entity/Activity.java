@@ -1,4 +1,4 @@
-package com.example.CampusActivityManagementsystem.dao;
+package com.example.CampusActivityManagementsystem.entity;
 
 import jakarta.persistence.*;
 
@@ -12,25 +12,25 @@ public class Activity {
     private int id;
 
     @Column(name = "title")
-    private String title;
+    private String title;// 活动主题
 
     @Column(name = "theme")
     private String theme;
 
     @Column (name = "start_time")
-    private String startTime;
+    private String startTime; // 开始时间（格式：yyyy-MM-dd HH:mm）
 
     @Column (name = "end_time")
-    private String endTime;
+    private String endTime; // 结束时间（格式：yyyy-MM-dd HH:mm）
 
     @Column(name = "location")
-    private String location;
+    private String location;// 地点
 
     @Column(name = "organizer")
-    private String organizer;
+    private String organizer; // 组织者
 
     @Column(name = "activity_content")
-    private String activityContent;
+    private String activityContent; // 活动内容
 
     public String getTitle() {
         return title;

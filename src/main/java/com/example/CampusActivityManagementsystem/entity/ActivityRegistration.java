@@ -1,4 +1,4 @@
-package com.example.CampusActivityManagementsystem.dao;
+package com.example.CampusActivityManagementsystem.entity;
 
 import jakarta.persistence.*;
 
